@@ -1,0 +1,306 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 4rem;
+    transition: 0.5s all;
+}
+nav.active {
+    height: 100vh;
+    transition: 0.5s all;
+}
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    visibility: hidden;
+    transition: 0.5s all;
+}
+ul.active {
+    display: initial;
+    visibility: visible;
+    transition: 0.5s all;
+}
+li {
+    color: black;
+    padding: 2rem 0;
+    font-size: 32px;
+    text-transform: capitalize;
+}
+.burgerTrigger {
+    position: absolute;
+    content: "";
+    background-color: transparent;
+    height: 1.75rem;
+    width: 1.75rem;
+    top: 2rem;
+    right: 2rem;
+    z-index: 3;
+    cursor: pointer;
+
+}
+
+.burgerMenu {
+    position: absolute;
+    content: "";
+    background-color: black;
+    height: 0.25rem;
+    width: 1.75rem;
+    top: 2rem;
+    right: 2rem;
+    z-index: 2;
+    transition: 0.5s all;
+}
+.burgerMenu.active {
+    background-color: white ;
+    transition: 0.5s all;
+}
+.burgerMenu.active::after {
+    transform: translateY(0rem) rotate(45deg);
+    transition: 0.5s all;
+}
+.burgerMenu.active::before {
+    transform: translateY(0rem) rotate(-45deg);
+    transition: 0.5s all;
+}
+.burgerMenu::after {
+    position: absolute;
+    content: "";
+    background-color: black;
+    height: 0.25rem;
+    width: 1.75rem;
+    z-index: 2;
+    transform: translateY(0.5rem);
+    transition: 0.5s all;
+}
+.burgerMenu::before {
+    position: absolute;
+    content: "";
+    background-color: black;
+    height: 0.25rem;
+    width: 1.75rem;
+    z-index: 2;
+    transform: translateY(-0.5rem);
+    transition: 0.5s all;
+}
+section {
+    height: 100vh;
+    background-image: url(/gifs/WFH.gif);
+    background-size: cover;
+    background-position: bottom center;
+}
+form {
+    padding: 2rem;
+}
+.formContents {
+    width: 100%;
+}
+h1.title {
+    text-transform: capitalize;
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+}
+p {
+    text-transform: capitalize;
+    color: white;
+    font-size: 16px;
+    padding: 2rem 0 0.25rem 0;
+    margin: 0;
+}
+input {
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 0.25rem;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 16px;
+}
+textarea {
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 0.25rem;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 16px;
+}
+input::placeholder {
+    color: white;
+    font-style: italic;
+    font-size: small;
+}
+textarea::placeholder {
+    color: white;
+    font-style: italic;
+    font-size: small;
+}
+button.btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background-color: white; opacity:0.6;
+    border-radius: 0.25rem;
+    margin: 2rem 0 0 0 ;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: 0.25s all;
+    font-size: large;
+}
+button.btn:hover{
+    transform: scale(1.025);
+}
+
+footer {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+p.logo {
+    padding: 3rem 0;
+    color: black;
+    font-size: calc(20px / 1.25)
+}
+p.termsAndConditions {
+    padding: 0 0 3rem 0;
+    color: black;
+    font-size: calc(20px / 1.25)
+}
+.icons {
+    padding: 0 0 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img.facebook {
+    transition: 0.25s all;
+    cursor: pointer;
+    padding: 0 0 0 0.5rem;
+}
+img.facebook:hover {
+    transition: 0.25s all;
+    transform: scale(1.1);
+}
+img.instagram {
+    transition: 0.25s all;
+    cursor: pointer;
+    padding: 0 0 0 0.5rem;
+}
+img.instagram:hover {
+    transition: 0.25s all;
+    transform: scale(1.1);
+}
+
+@media screen and (min-width: 850px){
+    .burgerMenu{
+        display: none;
+    }
+    .burgerTrigger {
+        display: none;
+    }
+
+    ul {
+        display: initial;
+        visibility: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    li {
+        padding: 0 2rem;
+        margin: 0;
+        font-size: calc(20px / 1.25);
+        cursor: pointer;
+    }
+    li.btn {
+        padding: 0.5rem 3rem;
+        margin: 0 2rem;
+        transform: 0.25s all;
+        border: 1px solid black;
+        border-radius: 2rem;
+    }
+    li.btn:hover {
+        background-color: black;
+        color: white;
+    }
+    form {
+        display: flex;
+        align-items: flex-start;
+        justify-content:  center;
+        flex-direction: column;
+    }
+    .formContents {
+        display: flex;
+        align-items: flex-start;
+        justify-content:  center;
+        flex-direction: column;
+        padding: 1rem 2rem;
+        height: 35rem;
+    }
+    h1.title {
+        font-size: calc(48px / 1);
+    }
+    p {
+        font-size: calc(24px / 1);
+    }
+    input {
+        width: 35rem;
+        font-size: calc(24px / 1);
+    }
+    input::placeholder {
+        font-size: calc(24px / 1.5);
+    }
+    textarea {
+       width: 35rem; 
+    }
+    textarea::placeholder {
+        font-size: calc(24px / 1.5);
+    }
+    button.btn {
+        width: calc(35rem + 2rem);
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100vw;
+        flex-direction: row;
+        padding: 3rem 0;
+    }
+    p.logo {
+        padding: 0 0 0 4rem;
+        margin: 0;
+    }
+    p.termsAndConditions {
+        padding: 0;
+        margin: 0;
+    }
+    .icons {
+        padding: 0 4rem 0 0;
+        margin: 0;
+    }
+}
